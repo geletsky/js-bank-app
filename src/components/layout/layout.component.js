@@ -5,7 +5,13 @@ export class Layout {
 	}
 
 	render() {
-		const headerElement = '<header>Header</header>'
+		const headerElement = `
+		<header>
+			<a href="/">Home</a>
+			<a href="/auth">Auth</a>
+		</header>
+		`
+
 		return `
 		${headerElement}
 		<main>
