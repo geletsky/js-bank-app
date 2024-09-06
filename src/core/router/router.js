@@ -1,6 +1,7 @@
 import { NotFound } from '@/components/screens/not-found/not-found.component'
 
 import { ROUTES } from './routes.data'
+import { Layout } from '@/components/layout/layout.component'
 
 export class Router {
 	#routes
@@ -9,6 +10,7 @@ export class Router {
 	constructor() {
 		this.#routes = ROUTES
 		this.#currentRoute = null
+		this.layout = null
 
 		this.#handleRouteChange()
 	}
@@ -33,6 +35,15 @@ export class Router {
 
 	#render() {
 		const component = new this.#currentRoute.component().render()
-		document.getElementById('app').innerHTML = component
+
+		if (!this.layout) {
+			this.layout = new Layout({
+				router: this,
+				children: component
+			}).render()
+			document.getElementById('app').innerHTML = this.layout
+		} else {
+			document.querySelector('main').innerHTML = component
+		}
 	}
 }
