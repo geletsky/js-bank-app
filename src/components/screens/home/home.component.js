@@ -1,4 +1,4 @@
-import { BaseScreen } from '@/core/components/base-screen.component'
+import { BaseScreen } from '@/core/component/base-screen.component'
 import renderService from '@/core/services/render.service'
 
 import template from './home.template.html'
@@ -11,6 +11,6 @@ export class Home extends BaseScreen {
 	render() {
 		const element = renderService.htmlToElement(template, [], styles)
 
-		return element.outerHTML
+		return element
 	}
 }
