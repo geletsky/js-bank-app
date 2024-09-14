@@ -1,0 +1,15 @@
+@import '@/styles/_variables.scss';
+
+.field {
+	padding: 17px 25px;
+
+	display: block;
+
+	background-color: #f8f8fa;
+	border: 1px solid transparent;
+	border-radius: 12px;
+
+	&:focus-within {
+		border-color: rgba($text-color, 0.5);
+	}
+}
