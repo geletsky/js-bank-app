@@ -1,0 +1,26 @@
+@import '@/styles/_variables.scss';
+
+.search {
+	padding: 15px 25px;
+
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	background-color: #f8f8fa;
+	border: 1px solid transparent;
+	border-radius: 12px;
+
+	& svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	& input {
+		width: 300px;
+	}
+
+	&:focus-within {
+		border-color: rgba($text-color, 0.5);
+	}
+}
