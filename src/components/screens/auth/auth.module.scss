@@ -1,0 +1,49 @@
+.auth {
+	height: 70vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&-form {
+		width: 650px;
+
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	&-header {
+		text-align: center;
+
+		& > h1 {
+			font-size: 32px;
+			font-weight: 600;
+		}
+	}
+
+	&-inputs {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&-actions button {
+		width: 100%;
+		text-align: center;
+	}
+
+	&-footer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		& button {
+			font-size: 18px;
+			font-weight: 600;
+
+			background-color: transparent;
+		}
+	}
+}
