@@ -39,7 +39,7 @@ export class Router {
 
 	navigate(path) {
 		if (path !== this.getCurrentPath()) {
-			window.history.pushState({}, '0', path)
+			window.history.pushState({}, '', path)
 			this.#handleRouteChange()
 		}
 	}
@@ -69,7 +69,7 @@ export class Router {
 
 			$R('#app').append(this.#layout)
 		} else {
-			$('#content').html('').append(component)
+			$R('#content').html('').append(component)
 		}
 	}
 }

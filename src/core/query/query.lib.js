@@ -27,7 +27,7 @@ export async function query({
 	let isLoading = true
 	let error = null
 	let data = null
-	const url = `${SERVER_URL}/api/${path}`
+	const url = `${SERVER_URL}/api${path}`
 
 	const accessToken = new StorageService().getItem(ACCESS_TOKEN_KEY)
 
@@ -40,9 +40,7 @@ export async function query({
 	}
 
 	if (accessToken) {
-		{
-			requestOptions.headers.Authorization = `Bearer ${accessToken}`
-		}
+		requestOptions.headers.Authorization = `Bearer ${accessToken}`
 	}
 
 	if (body) {

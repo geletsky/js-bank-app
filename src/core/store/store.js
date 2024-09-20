@@ -1,5 +1,7 @@
-import { ACCESS_TOKEN_KEY, USER_STORAGE_KEY } from '@/constants/auth.constants'
+// Singleton pattern
 import { StorageService } from '../services/storage.service'
+
+import { ACCESS_TOKEN_KEY, USER_STORAGE_KEY } from '@/constants/auth.constants'
 
 /**
  * Store class implements the Singleton pattern, providing a centralized storage and state management solution.

@@ -1,4 +1,4 @@
-export class FormService {
+class FormService {
 	/**
 	 * Retrieves the values of input elements within a form element.
 	 * @param {HTMLFormElement} formElement - The form element containing input elements.
@@ -6,7 +6,7 @@ export class FormService {
 	 */
 	getFormValues(formElement) {
 		const inputs = formElement.querySelectorAll('input')
-		const values = []
+		const values = {}
 
 		for (const input of inputs) {
 			values[input.name] = input.value

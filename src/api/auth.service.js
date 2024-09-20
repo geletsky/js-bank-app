@@ -13,7 +13,6 @@ export class AuthService {
 	main(type, body) {
 		return query({
 			path: `${this.#BASE_URL}/${type}`,
-			method: 'POST',
 			body,
 			onSuccess: data => {
 				this.store.login(data.user, data.accessToken)
@@ -21,7 +20,8 @@ export class AuthService {
 					'success',
 					'You have successfully logged in!'
 				)
-			}
+			},
+			method: 'POST'
 		})
 	}
 }

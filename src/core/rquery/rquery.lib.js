@@ -146,12 +146,30 @@ class RQuery {
 		return this
 	}
 
+	/**
+	 * Shows the selected element by removing the 'display' style property
+	 * @returns {RQuery} The current RQuery instance for chaining
+	 */
+	show() {
+		this.element.style.removeProperty('display')
+		return this
+	}
+
+	/**
+	 * Hides the selected element by setting its display style to 'none'
+	 * @returns {RQuery} The current RQuery instance for chaining
+	 */
+	hide() {
+		this.element.style.display = 'none'
+		return this
+	}
+
 	// !EVENTS
 
 	/**
 	 * Set on event listener for the submit event of a form element.
 	 * @param {function(Event): void} onSubmit - The event listener for the form's submit event
-	 * @returns {RQuery} The current RQuery instance for chaining. 
+	 * @returns {RQuery} The current RQuery instance for chaining.
 	 */
 	submit(onSubmit) {
 		if (this.element.tagName.toLocaleLowerCase() === 'form') {
