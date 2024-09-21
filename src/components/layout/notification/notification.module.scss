@@ -1,14 +1,23 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
 .notification {
+	padding: 1rem 1.5rem;
+	
 	position: fixed;
-	top: 3rem;
-	right: 3rem;
-	background-color: rgb(255 74 74);
-	border-radius: 24px;
-	padding: 0.7rem 1.4rem;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+	bottom: 3rem;
+	right: 1.5rem;
+	
 	cursor: default;
 	z-index: 5;
+	color: #fff;
+	
 	display: none;
+	
+	border-radius: $radius;
+	background-color: rgb(255 74 74);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
 	animation: slideIn 1s;
 
 	&.error,

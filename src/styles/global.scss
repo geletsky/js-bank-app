@@ -9,15 +9,15 @@ body {
 
 body {
 	background-color: $bg-color;
-	color: $text-color;
+	color: $primary-color;
 	font-size: 18px;
-	line-height: 1.6;
+	line-height: 1.5;
 }
 
 input {
-	font-size: 16px;
+	font-size: 18px;
 	background-color: transparent;
-	color: $text-color;
+	color: $primary-color;
 }
 
 input::-webkit-outer-spin-button,
@@ -33,7 +33,4 @@ input[type='number'] {
 
 a {
 	text-decoration: none;
-	transition: border-color 0.3s ease-in-out;
-	border-bottom: 1px solid transparent;
-	animation: drawing 0.4s;
 }

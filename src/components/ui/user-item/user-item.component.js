@@ -10,7 +10,6 @@ export class UserItem extends ChildComponent {
 		super()
 
 		if (!user) throw new Error('User should be passed!')
-		if (!user?.name) throw new Error('User must have a "name"!')
 		if (!user?.avatarPath) throw new Error('User must have a "avatarPath"!')
 
 		this.user = user
@@ -23,7 +22,7 @@ export class UserItem extends ChildComponent {
 	}
 
 	update({ avatarPath, name }) {
-		if (avatarPath && name) {
+		if (avatarPath || name) {
 			$R(this.element).find('img').attr('src', avatarPath).attr('alt', name)
 
 			$R(this.element).find('span').text(name)

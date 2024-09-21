@@ -1,16 +1,19 @@
 @import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
 
 .button {
 	padding: 12px 22px;
 
-	color: $text-color;
 	font-size: 18px;
 	font-weight: 600;
-
+	color: $primary-color;
 	text-transform: capitalize;
-	border: 1px solid #ccc;
+
 	border-radius: $radius;
 	background-color: transparent;
+	border: 1px solid $primary-color;
+
+	@include transition(background-color);
 
 	&:disabled {
 		cursor: not-allowed;
@@ -18,9 +21,9 @@
 	}
 
 	&:hover {
-		border: 1px solid #f2f2f2;
+		border: 1px solid transparent;
 		background-color: #e4c9fe;
 
-		transition: all 0.3s ease-in-out;
+		@include transition(background-color);
 	}
 }

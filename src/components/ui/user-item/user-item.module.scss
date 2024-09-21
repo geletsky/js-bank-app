@@ -5,16 +5,20 @@
 	align-items: center;
 	gap: 15px;
 
+	width: 50px;
+	height: 50px;
+
 	background-color: transparent;
 
 	&:disabled {
 		cursor: default;
-		color: $text-color;
+		color: $primary-color;
 	}
 
 	& img {
-		width: 40px;
-		height: 40px;
+		width: 50px;
+		height: 50px;
+		
 		border-radius: 50%;
 	}
 

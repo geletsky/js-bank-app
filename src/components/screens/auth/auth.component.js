@@ -48,17 +48,17 @@ export class Auth extends BaseScreen {
 
 		$R(this.element)
 			.find('h1')
-			.text(this.#isTypeLogin ? 'Welcome' : 'Welcome Back')
+			.text(this.#isTypeLogin ? 'Create Your Account' : 'Welcome Back')
 
 		$R(this.element)
 			.find('#auth-footer-text')
 			.text(
 				this.#isTypeLogin
 					? 'Already have an account?'
-					: "Don't have an account?"
+					: "Don't have an account yet?"
 			)
 
-		$R(event.target).text(this.#isTypeLogin ? 'Sign In' : 'Register')
+		$R(event.target).text(this.#isTypeLogin ? 'Sign In' : 'Sign up')
 		this.#isTypeLogin = !this.#isTypeLogin
 	}
 
