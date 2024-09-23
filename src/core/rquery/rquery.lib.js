@@ -194,6 +194,24 @@ class RQuery {
 	}
 
 	/**
+	 * Add an event listener to the selected element for the specified event type.
+	 * @param {string} eventType - The type of event to listen for (e.g., 'click', 'input', etc.).
+	 * @param {function(Event): void} callback - The event listener function to execute when the event is triggered. The function will receive the event object as its argument.
+	 * @returns {RQuery} The current RQuery instance for chaining.
+	 */
+	on(eventType, callback) {
+		if (typeof eventType !== 'string' || typeof callback !== 'function') {
+			throw new Error(
+				'EventType must be a string and callback must be a function'
+			)
+		}
+
+		this.element.addEventListener(eventType, callback)
+
+		return this
+	}
+
+	/**
 	 * Set attributes and event listeners for an input element.
 	 * @param {object} options - An object containing input options.
 	 * @param {function(Event): void} [options.onInput] - The event listener for the input's input event.

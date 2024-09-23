@@ -19,6 +19,11 @@ export class Header extends ChildComponent {
 		this.store.addObserver(this)
 
 		this.router = router
+
+		this.userItem = new UserItem({
+			avatarPath:
+				'/'
+		})
 	}
 
 	update() {
@@ -27,11 +32,15 @@ export class Header extends ChildComponent {
 
 		if (this.user) {
 			rightSide.show()
+			this.userItem.update(this.user)
+
 			$R(this.element)
 				.find('h2')
 				.text(`Hello, ${formatUserName(this.user.name)} 👋`)
+
+			$R(this.element).find('span').hide()
+
 			this.router.navigate('/')
-			console.log(this.user.name);
 		} else {
 			$R(this.element).find('h2').text('Bank.io')
 			rightSide.hide()
@@ -43,11 +52,8 @@ export class Header extends ChildComponent {
 			template,
 			[
 				Search,
-				new UserItem({
-					avatarPath:
-						'https://r2.erweima.ai/imgcompressed/img/compressed_95f6dc695351dbb5cf511ee473897718.webp'
-				}),
-				new LogoutButton({ router: this.router })
+				new LogoutButton({ router: this.router }),
+				this.userItem,
 			],
 			styles
 		)
