@@ -1,2 +1,13 @@
 .home {
+	padding: 160px 0px 0px 0px;
+
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+}
+
+.home-section-title {
+	margin: 0px 0px 40px 0px;
+
+	font-size: 26px;
+	font-weight: 600;
 }

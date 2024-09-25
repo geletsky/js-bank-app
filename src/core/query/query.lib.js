@@ -69,9 +69,8 @@ export async function query({
 	} catch (errorData) {
 		const errorMessage = extractErrorMessage(errorData)
 
-		if (errorMessage) {
-			onError(errorMessage)
-		}
+
+		new NotificationService().show('error', errorMessage)
 	} finally {
 		isLoading = false
 	}
