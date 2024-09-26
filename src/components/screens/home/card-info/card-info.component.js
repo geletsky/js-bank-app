@@ -10,6 +10,7 @@ import { $R } from '@/core/rquery/rquery.lib'
 import { formatCardNumber } from '@/utils/format/format-card-number'
 import { formatToCurrency } from '@/utils/format/format-to-curency'
 import { formatUserName } from '@/utils/format/format-user-name'
+import { BALANCE_UPDATED } from '@/constants/events.constants'
 
 // const CODE = '***'
 
@@ -22,6 +23,12 @@ export class CardInfo extends ChildComponent {
 
 		this.element = renderService.htmlToElement(template, [], styles)
 	}
+	
+	#addListeners() {
+		document.addEventListener(BALANCE_UPDATED)
+	}
+
+	
 
 	#copyCardNumber = event => {
 		navigator.clipboard
