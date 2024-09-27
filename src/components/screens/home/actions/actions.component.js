@@ -74,16 +74,16 @@ export class Actions extends ChildComponent {
 			)
 			.append(
 				new Button({
-					children: 'Withdrawl',
-					onClick: event => this.updateBalance(event, 'withdrawl')
+					children: 'Withdrawal',
+					onClick: event => this.updateBalance(event, 'withdrawal')
 				}).render()
 			)
 
 		$R(this.element)
 			.find('input')
 			.input({ onInput: event =>{
-				const formatted = formatAmount(event.target.value)
-				event.target.value = formatted
+				const formattedAmount = formatAmount(event.target.value)
+				event.target.value = formattedAmount
 			}})
 
 		return this.element

@@ -1,0 +1,37 @@
+.transfer-field {
+	margin: 100px 0px 0px 0px;
+	
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	& label {
+		position: relative;
+	}
+
+	& label::before {
+		position: absolute;
+		top: -35px;
+		left: 10px;
+		width: 100%;
+		z-index: 1;
+	}
+
+	& label:nth-child(1)::before {
+		content: "Recipient's";
+	}
+
+	& label:nth-child(2)::before {
+		content: 'Amount';
+	}
+
+	& button {
+		margin: -20px 0px 0px 0px;
+	}
+}
+
+
+.transfer-fields {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}

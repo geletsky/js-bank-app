@@ -5,13 +5,14 @@ import template from './home.template.html'
 import * as styles from './home.module.scss'
 import { CardInfo } from './card-info/card-info.component'
 import { Actions } from './actions/actions.component'
+import { Contacts } from './contacts/contacts.component'
 
 export class Home extends BaseScreen {
 	constructor() {
 		super({ title: 'Home' })
 	}
 	render() {
-		const element = renderService.htmlToElement(template, [CardInfo, Actions], styles)
+		const element = renderService.htmlToElement(template, [CardInfo, Actions, Contacts], styles)
 
 		return element
 	}

@@ -4,6 +4,7 @@ import renderService from '@/core/services/render.service'
 import * as styles from './user-item.module.scss'
 import template from './user-item.template.html'
 import { $R } from '@/core/rquery/rquery.lib'
+import { formatUserName } from '@/utils/format/format-user-name'
 
 export class UserItem extends ChildComponent {
 	constructor(user, onClick) {
@@ -23,9 +24,9 @@ export class UserItem extends ChildComponent {
 
 	update({ avatarPath, name }) {
 		if (avatarPath && name) {
-			$R(this.element).find('img').attr('src', avatarPath).attr('alt', name)
+			$R(this.element).find('img').attr('src', 'https://masterpiecer-images.s3.yandex.net/f9f26f6e597f11ee9aafaaafe6635749:upscaled').attr('alt', name)
 
-			$R(this.element).find('span').text(name)
+			$R(this.element).find('span').text(formatUserName(name))
 		}
 	}
 
