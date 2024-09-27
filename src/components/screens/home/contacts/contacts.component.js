@@ -43,7 +43,6 @@ export class Contacts extends ChildComponent {
 			styles
 		)
 
-		console.log(this.store.user);
     if(this.store.user) {
       this.fetchData()
     }

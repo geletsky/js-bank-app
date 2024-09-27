@@ -35,9 +35,8 @@ export class TransferField extends ChildComponent {
 
 		$R(event.target).html('Sending...').attr('disabled', 'true')
 
-		const inputElement = $R(this.element).find('input')
-		const toCardNumber = inputElement.value().replaceAll('-', '')
-		console.log(toCardNumber)
+		const inputCardElement = $R(this.element).find('input')
+		const toCardNumber = inputCardElement.value().replaceAll('-', '')
 
 		const reset = () => {
 			$R(event.target).removeAttr('disabled').text('Send')
@@ -50,10 +49,13 @@ export class TransferField extends ChildComponent {
 			return
 		}
 
-		let amount = prompt('Transfer money')
+		const inputAmountElement = $R(this.element).find('[type="number"]')
+		let amount = inputAmountElement.value()
 
 		this.cardService.transfer({ amount, toCardNumber }, () => {
-			inputElement.value('')
+			
+			inputCardElement.value('')
+			inputAmountElement.value('')
 			amount = ''
 
 			document.dispatchEvent(new Event(TRANSACTION_COMPLETED))
@@ -88,11 +90,9 @@ export class TransferField extends ChildComponent {
 				new Field({
 					placeholder: 'Enter amount',
 					type: 'number',
-					name: 'credit-card'
+					name: 'card-amount'
 				}).render()
 			)
-
-		console.log(this.store.user)
 
 		// $R(this.element)
 		// 	.find('input')
