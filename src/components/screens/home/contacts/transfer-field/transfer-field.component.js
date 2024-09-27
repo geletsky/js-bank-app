@@ -23,10 +23,9 @@ export class TransferField extends ChildComponent {
 		this.store = Store.getInstance().state
 		this.cardService = new CardService()
 		this.notificationService = new NotificationService()
-
 	}
 
-	#handleTransfer = (event) => {
+	#handleTransfer = event => {
 		event.preventDefault()
 
 		if (!this.store.user) {
@@ -38,7 +37,7 @@ export class TransferField extends ChildComponent {
 
 		const inputElement = $R(this.element).find('input')
 		const toCardNumber = inputElement.value().replaceAll('-', '')
-		console.log(toCardNumber);
+		console.log(toCardNumber)
 
 		const reset = () => {
 			$R(event.target).removeAttr('disabled').text('Send')
@@ -76,7 +75,8 @@ export class TransferField extends ChildComponent {
 			styles
 		)
 
-		$R(this.element).find('#transfer-fields')
+		$R(this.element)
+			.find('#transfer-fields')
 			.append(
 				new Field({
 					placeholder: 'xxxx-xxxx-xxxx-xxxx',
@@ -92,7 +92,7 @@ export class TransferField extends ChildComponent {
 				}).render()
 			)
 
-			console.log(this.store.user);
+		console.log(this.store.user)
 
 		// $R(this.element)
 		// 	.find('input')

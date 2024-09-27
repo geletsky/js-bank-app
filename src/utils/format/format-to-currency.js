@@ -6,7 +6,7 @@
  */
 export function formatToCurrency(number) {
 	return new Intl.NumberFormat('ru-RU', {
-		currency: '$',
+		currency: 'USD',
 		style: 'currency'
 	}).format(number)
 }

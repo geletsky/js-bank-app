@@ -38,9 +38,15 @@ export class NotificationService {
 		}
 
 		const notificationElement = $R('#notification')
+		const notificationTypeElement = $R('#notification-type')
+		const notificationMessageElement = $R('#notification-message')
 		const className = classNames[type]
 
-		notificationElement.text(message).addClass(className)
+		notificationMessageElement.text(message)
+		type === 'success'
+			? notificationTypeElement.text('Success Message')
+			: notificationTypeElement.text('Error message')
+		notificationElement.addClass(className)
 
 		this.#setTimeout(() => {
 			notificationElement.removeClass(className)

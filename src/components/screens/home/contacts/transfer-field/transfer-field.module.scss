@@ -1,9 +1,10 @@
 .transfer-field {
 	margin: 100px 0px 0px 0px;
-	
+
 	display: flex;
 	flex-direction: column;
 	gap: 50px;
+	
 	& label {
 		position: relative;
 	}
@@ -27,11 +28,10 @@
 	& button {
 		margin: -20px 0px 0px 0px;
 	}
-}
 
-
-.transfer-fields {
-	display: flex;
-	flex-direction: column;
-	gap: 50px;
+	&-inputs {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
 }

@@ -8,11 +8,9 @@ import { Store } from '@/core/store/store'
 import { NotificationService } from '@/core/services/notification.service'
 import { $R } from '@/core/rquery/rquery.lib'
 import { formatCardNumber } from '@/utils/format/format-card-number'
-import { formatToCurrency } from '@/utils/format/format-to-curency'
+import { formatToCurrency } from '@/utils/format/format-to-currency'
 import { formatUserName } from '@/utils/format/format-user-name'
 import { BALANCE_UPDATED } from '@/constants/events.constants'
-
-// const CODE = '***'
 
 export class CardInfo extends ChildComponent {
 	constructor() {
@@ -23,12 +21,10 @@ export class CardInfo extends ChildComponent {
 
 		this.element = renderService.htmlToElement(template, [], styles)
 	}
-	
+
 	#addListeners() {
 		document.addEventListener(BALANCE_UPDATED)
 	}
-
-	
 
 	#copyCardNumber = event => {
 		navigator.clipboard
@@ -40,6 +36,12 @@ export class CardInfo extends ChildComponent {
 		// $R(this.element).html(
 		// 	renderService.htmlToElement(template, [], styles).innerHTML
 		// )
+
+		console.log(this.card)
+
+		$R(this.element)
+			.find('#card-amount')
+			.text(formatToCurrency(this.card.balance))
 
 		$R(this.element)
 			.find('#card-number')
