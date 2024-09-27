@@ -1,0 +1,15 @@
+.transactions {
+	margin: 30px 0px 0px 0px;
+  &-section-title {
+		margin: 0px 0px 15px 0px;
+
+		font-size: 26px;
+		font-weight: 600;
+	}
+
+	& > div {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+}

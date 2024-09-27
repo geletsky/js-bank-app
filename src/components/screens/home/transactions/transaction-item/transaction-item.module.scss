@@ -1,0 +1,68 @@
+@import '@/styles/_variables.scss';
+
+.transaction-item {
+	display: grid;
+	align-items: center;
+	grid-template-columns: repeat(4, 1fr);
+}
+.transaction-item-wrapper {
+	text-align: center;
+
+	&:nth-child(1) {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+
+		font-weight: 600;
+	}
+
+	&:nth-child(2) {
+		color: #9a9a9a;
+	}
+
+	&:nth-child(3) {
+		color: #9a9a9a;
+	}
+	
+	&:nth-child(4) {
+		font-weight: 600;
+	}
+}
+
+.transaction-item-icon {
+	width: 65px;
+	height: 65px;
+
+	position: relative;
+
+	border-radius: 50%;
+	background-color: $primary-color;
+	&.income {
+		& svg {
+			&:first-child {
+				display: block;
+			}
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+
+	& svg:first-child {
+		display: none;
+	}
+
+	& svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 5;
+		transform: translate(-50%, -50%);
+	}
+}
+.lucide {
+}
+.lucide-trending-up {
+}
+.lucide-trending-down {
+}
