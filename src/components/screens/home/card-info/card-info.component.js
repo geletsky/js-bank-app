@@ -20,10 +20,25 @@ export class CardInfo extends ChildComponent {
 		this.notificationService = new NotificationService()
 
 		this.element = renderService.htmlToElement(template, [], styles)
+
+		this.#addListeners()
 	}
 
 	#addListeners() {
-		document.addEventListener(BALANCE_UPDATED)
+		document.addEventListener(BALANCE_UPDATED, this.#onBalanceUpdated)
+		console.log('da');
+	}
+
+	#removeListeners() {
+		document.removeEventListener(BALANCE_UPDATED, () => this.#onBalanceUpdated)
+	}
+
+	#onBalanceUpdated = () => {
+		this.fetchData()
+	}
+
+	destroy() {
+		this.#removeListeners()
 	}
 
 	#copyCardNumber = event => {
@@ -36,9 +51,7 @@ export class CardInfo extends ChildComponent {
 		// $R(this.element).html(
 		// 	renderService.htmlToElement(template, [], styles).innerHTML
 		// )
-
-		console.log(this.card)
-
+		
 		$R(this.element)
 			.find('#card-amount')
 			.text(formatToCurrency(this.card.balance))

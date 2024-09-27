@@ -42,13 +42,13 @@ export class Actions extends ChildComponent {
 		}
 
 		this.cardService.updateBalance(amount, type, () => {
-			inputElement.value('')
+      inputElement.value('')
 
-			const balanceUpdatedEvent = new Event(BALANCE_UPDATED)
-			document.dispatchEvent(balanceUpdatedEvent)
+      const balanceUpdatedEvent = new Event(BALANCE_UPDATED)
+      document.dispatchEvent(balanceUpdatedEvent)
+    })
 
-			$R(event.target).removeAttr('disabled').text(type)
-		})
+		$R(event.target).removeAttr('disabled').text(type)
 	}
 
 	render() {
