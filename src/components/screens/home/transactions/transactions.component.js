@@ -50,7 +50,6 @@ export class Transactions extends ChildComponent {
 			transactionList.text('')
 
 			if (data.length) {
-				console.log(data.transactions);
 				for (const transaction of data.transactions) {
 					transactionList.append(new TransactionItem(transaction).render())
 				}
@@ -62,7 +61,6 @@ export class Transactions extends ChildComponent {
 
 	render() {
 		if (this.store.user) {
-			console.log(this.transactionService);
 			this.fetchData()
 		}
 		return this.element

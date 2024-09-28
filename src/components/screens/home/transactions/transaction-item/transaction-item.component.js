@@ -16,8 +16,6 @@ export class TransactionItem extends ChildComponent {
 	render() {
 		this.element = renderService.htmlToElement(template, [], styles)
 
-		console.log(this.transaction.type);
-
 		const isIncome = this.transaction.type === 'TOP_UP'
 		const name = isIncome ? 'Income' : 'Expense'
 

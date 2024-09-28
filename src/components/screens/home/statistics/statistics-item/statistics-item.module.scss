@@ -1,0 +1,26 @@
+.statistics-item {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	& div:last-child {
+		display: flex;
+		flex-direction: column;
+
+		& span:first-child {
+			font-weight: 600;
+		}
+		& span:last-child {
+			font-size: 14px;
+			color: #969696;
+			font-weight: 600;
+		}
+	}
+}
+.statistics-icon {
+	padding: 25px;
+
+	display: flex;
+	border-radius: 18px;
+	background-color: #f8f8fa;
+}

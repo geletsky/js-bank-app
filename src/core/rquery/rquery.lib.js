@@ -57,10 +57,6 @@ class RQuery {
 	 * @returns {RQuery} The current RQuery instance for chaining.
 	 */
 	append(childElement) {
-		if (!(childElement instanceof HTMLElement)) {
-			throw new Error('Element must be an HTMLElement')
-		}
-
 		this.element.appendChild(childElement)
 		return this
 	}
@@ -78,6 +74,13 @@ class RQuery {
 		} else {
 			throw new Error('Element does not have a parent element')
 		}
+	}
+
+	addSVG(svgString) {
+		const div = document.createElement('div')
+		div.innerHTML = svgString
+		const svgElement = div.firstChild
+		this.append(svgElement)
 	}
 
 	/**

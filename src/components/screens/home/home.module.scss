@@ -10,4 +10,10 @@
 		font-size: 26px;
 		font-weight: 600;
 	}
+
+	&-card {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
 }
