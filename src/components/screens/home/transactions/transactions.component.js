@@ -62,7 +62,7 @@ export class Transactions extends ChildComponent {
 
 	render() {
 		if (this.store.user) {
-			this.fetchData()
+			setTimeout(() => this.fetchData(), 500)
 		}
 		return this.element
 	}

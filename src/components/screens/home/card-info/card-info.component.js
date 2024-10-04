@@ -20,7 +20,11 @@ export class CardInfo extends ChildComponent {
 		this.cardService = new CardService()
 		this.notificationService = new NotificationService()
 
-		this.element = renderService.htmlToElement(template, [new Heading('My Card')], styles)
+		this.element = renderService.htmlToElement(
+			template,
+			[new Heading('My Card')],
+			styles
+		)
 
 		this.#addListeners()
 	}
@@ -51,7 +55,7 @@ export class CardInfo extends ChildComponent {
 		// $R(this.element).html(
 		// 	renderService.htmlToElement(template, [], styles).innerHTML
 		// )
-		
+
 		$R(this.element)
 			.find('#card-amount')
 			.text(formatToCurrency(this.card.balance))
@@ -81,7 +85,9 @@ export class CardInfo extends ChildComponent {
 	}
 
 	render() {
-		if (this.store.state.user) this.fetchData()
+		if (this.store.state.user) {
+			setTimeout(() => this.fetchData(), 500)
+		}
 
 		return this.element
 	}

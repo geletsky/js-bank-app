@@ -80,7 +80,9 @@ export class Statistics extends ChildComponent {
 	}
 
 	render() {
-    if (this.store.user) this.fetchData()
+    if (this.store.user) {
+			setTimeout(() => this.fetchData(), 500)
+		}
 
 		return this.element
 	}
