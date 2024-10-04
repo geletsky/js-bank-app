@@ -1,4 +1,11 @@
+@import '@/styles/_variables';
+
 .actions {
+	padding: 30px;
+
+	border-radius: $radius;
+	background-color: $white;
+
 	&-section-title {
 		margin: 0px 0px 30px 0px;
 

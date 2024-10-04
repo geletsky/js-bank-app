@@ -1,5 +1,11 @@
+@import '@/styles/_variables';
+
 .contacts {
 	margin: 30px 0px 0px 0px;
+	padding: 30px;
+
+	border-radius: $radius;
+	background-color: $white;
 
 	&-section-title {
 		margin: 0px 0px 30px 0px;

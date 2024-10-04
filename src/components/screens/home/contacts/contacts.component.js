@@ -10,6 +10,7 @@ import { $R } from '@/core/rquery/rquery.lib'
 import { UserItem } from '@/components/ui/user-item/user-item.component'
 import { formatCardNumberWithDashes } from '@/utils/format/format-card-number'
 import { TRANSFER_FIELD_SELECTOR } from '@/constants/transfer.constants'
+import { Heading } from '@/components/ui/heading/heading.component'
 
 export class Contacts extends ChildComponent {
 	constructor() {
@@ -39,13 +40,13 @@ export class Contacts extends ChildComponent {
 	render() {
 		this.element = renderService.htmlToElement(
 			template,
-			[TransferField],
+			[new Heading('Quick Transactions'), TransferField],
 			styles
 		)
 
-    if(this.store.user) {
-      this.fetchData()
-    }
+		if (this.store.user) {
+			this.fetchData()
+		}
 
 		return this.element
 	}

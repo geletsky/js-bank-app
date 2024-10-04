@@ -11,6 +11,7 @@ import { formatCardNumber } from '@/utils/format/format-card-number'
 import { formatToCurrency } from '@/utils/format/format-to-currency'
 import { formatUserName } from '@/utils/format/format-user-name'
 import { BALANCE_UPDATED } from '@/constants/events.constants'
+import { Heading } from '@/components/ui/heading/heading.component'
 
 export class CardInfo extends ChildComponent {
 	constructor() {
@@ -19,7 +20,7 @@ export class CardInfo extends ChildComponent {
 		this.cardService = new CardService()
 		this.notificationService = new NotificationService()
 
-		this.element = renderService.htmlToElement(template, [], styles)
+		this.element = renderService.htmlToElement(template, [new Heading('My Card')], styles)
 
 		this.#addListeners()
 	}

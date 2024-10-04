@@ -9,6 +9,7 @@ import { StatisticsItem } from './statistics-item/statistics-item.component'
 import { formatToCurrency } from '@/utils/format/format-to-currency'
 import { TRANSACTION_COMPLETED } from '@/constants/events.constants'
 import { $R } from '@/core/rquery/rquery.lib'
+import { Heading } from '@/components/ui/heading/heading.component'
 
 export class Statistics extends ChildComponent {
 	constructor() {
@@ -17,7 +18,7 @@ export class Statistics extends ChildComponent {
 		this.store = Store.getInstance().state
 		this.statisticService = new StatisticService()
 
-		this.element = renderService.htmlToElement(template, [], styles)
+		this.element = renderService.htmlToElement(template, [new Heading('Analytics')], styles)
 
 		this.#addListeners()
 	}

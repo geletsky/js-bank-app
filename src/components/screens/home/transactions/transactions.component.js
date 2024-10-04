@@ -8,6 +8,7 @@ import { TransactionService } from '@/api/transaction.service'
 import { TRANSACTION_COMPLETED } from '@/constants/events.constants'
 import { TransactionItem } from './transaction-item/transaction-item.component'
 import { $R } from '@/core/rquery/rquery.lib'
+import { Heading } from '@/components/ui/heading/heading.component'
 
 export class Transactions extends ChildComponent {
 	constructor() {
@@ -15,7 +16,7 @@ export class Transactions extends ChildComponent {
 		this.store = Store.getInstance().state
 		this.transactionService = new TransactionService()
 
-		this.element = renderService.htmlToElement(template, [], styles)
+		this.element = renderService.htmlToElement(template, [new Heading('Transactions History')], styles)
 
 		this.#addListeners()
 	}

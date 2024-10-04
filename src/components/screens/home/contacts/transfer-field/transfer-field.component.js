@@ -89,19 +89,18 @@ export class TransferField extends ChildComponent {
 			.append(
 				new Field({
 					placeholder: 'Enter amount',
-					type: 'number',
 					name: 'card-amount'
 				}).render()
 			)
 
-		// $R(this.element)
-		// 	.find('input')
-		// 	.input({
-		// 		onInput: event => {
-		// 			const formattedAmount = formatAmount(event.target.value)
-		// 			event.target.value = formattedAmount
-		// 		}
-		// 	})
+		$R(this.element)
+			.find('[name="card-amount"]')
+			.input({
+				onInput: event => {
+					const formattedAmount = formatAmount(event.target.value)
+					event.target.value = formattedAmount
+				}
+			})
 
 		return this.element
 	}

@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button/button.component'
 import validationService from '@/core/services/validation.service'
 import { BALANCE_UPDATED } from '@/constants/events.constants'
 import { formatAmount } from '@/utils/format/format-amount'
+import { Heading } from '@/components/ui/heading/heading.component'
 
 export class Actions extends ChildComponent {
 	constructor() {
@@ -33,7 +34,7 @@ export class Actions extends ChildComponent {
 		$R(event.target).text('Sending').attr('disabled, true')
 
 		const inputElement = $R(this.element).find('input')
-		const amount = inputElement.value().replace(/[\s$]/g, '');
+		const amount = inputElement.value().replace(/[\s$]/g, '')
 
 		if (!amount) {
 			this.notificationService.show('error', 'Enter the amount')
@@ -42,11 +43,11 @@ export class Actions extends ChildComponent {
 		}
 
 		this.cardService.updateBalance(amount, type, () => {
-      inputElement.value('')
+			inputElement.value('')
 
-      const balanceUpdatedEvent = new Event(BALANCE_UPDATED)
-      document.dispatchEvent(balanceUpdatedEvent)
-    })
+			const balanceUpdatedEvent = new Event(BALANCE_UPDATED)
+			document.dispatchEvent(balanceUpdatedEvent)
+		})
 
 		$R(event.target).removeAttr('disabled').text(type)
 	}
@@ -55,10 +56,12 @@ export class Actions extends ChildComponent {
 		this.element = renderService.htmlToElement(
 			template,
 			[
+				new Heading('Balance management'),
 				new Field({
 					placeholder: 'Enter the amount',
 					name: 'amount',
-					type: 'text'
+					type: 'text',
+					isGray: 'gray'
 				})
 			],
 			styles
@@ -81,10 +84,12 @@ export class Actions extends ChildComponent {
 
 		$R(this.element)
 			.find('input')
-			.input({ onInput: event =>{
-				const formattedAmount = formatAmount(event.target.value)
-				event.target.value = formattedAmount
-			}})
+			.input({
+				onInput: event => {
+					const formattedAmount = formatAmount(event.target.value)
+					event.target.value = formattedAmount
+				}
+			})
 
 		return this.element
 	}
