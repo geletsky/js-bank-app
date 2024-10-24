@@ -9,13 +9,16 @@
 	align-items: center;
 
 	&-form {
-		padding: 0px 30px;
+		padding: 50px;
 
 		width: 640px;
 
 		display: flex;
 		flex-direction: column;
 		gap: 30px;
+
+		background-color: $white;
+		border-radius: $radius;
 	}
 
 	&-header {
