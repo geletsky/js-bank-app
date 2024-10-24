@@ -50,13 +50,13 @@ export class TransferField extends ChildComponent {
 		}
 
 		const inputAmountElement = $R(this.element).find('[type="number"]')
-		let amount = inputAmountElement.value()
+		let amount = +inputAmountElement.value()
 
 		this.cardService.transfer({ amount, toCardNumber }, () => {
-			
 			inputCardElement.value('')
 			inputAmountElement.value('')
 			amount = ''
+			console.log(amount);
 
 			document.dispatchEvent(new Event(TRANSACTION_COMPLETED))
 			document.dispatchEvent(new Event(BALANCE_UPDATED))
@@ -89,18 +89,12 @@ export class TransferField extends ChildComponent {
 			.append(
 				new Field({
 					placeholder: 'Enter amount',
-					name: 'card-amount'
+					name: 'card-amount',
+					type: 'number'
 				}).render()
 			)
 
-		$R(this.element)
-			.find('[name="card-amount"]')
-			.input({
-				onInput: event => {
-					const formattedAmount = formatAmount(event.target.value)
-					event.target.value = formattedAmount
-				}
-			})
+		$R(this.element).find('[name="card-amount"]')
 
 		return this.element
 	}
