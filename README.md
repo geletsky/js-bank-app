@@ -8,6 +8,7 @@ The **JS Bank App** is a web application that allows users to create and manage 
 
 ## Features
 
+- **Single Page Application (SPA)**: Built using React principles, providing a seamless user experience without full page reloads.
 - **User Authentication**: Users can create accounts and log in securely.
 - **Account Management**: Users can create and manage multiple bank accounts.
 - **Transaction History**: View all transactions related to each account.
@@ -63,13 +64,13 @@ Here are some screenshots of the application:
 
 ![Auth Page](https://github.com/geletsky/js-bank-app/blob/main/readme/img/02.png?raw=true)
 
-### Validation
+### Form Validation
 
-![Validation](https://github.com/geletsky/js-bank-app/blob/main/readme/img/03.png?raw=true)
+![Form Validation](https://github.com/geletsky/js-bank-app/blob/main/readme/img/03.png?raw=true)
 
-### Searching
+### Search the user
 
-![Searching](https://github.com/geletsky/js-bank-app/blob/main/readme/img/04.png?raw=true)
+![Search the user](https://github.com/geletsky/js-bank-app/blob/main/readme/img/04.png?raw=true)
 
 ## Author
 
